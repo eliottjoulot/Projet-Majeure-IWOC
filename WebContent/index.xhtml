@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<!--   HEAD  -->
+ <head>
+    <meta charset="utf-8"></meta>
+	<title>index</title>
+	
+
+
+	 
+   	<!-- Loading Bootstrap  -->
+    		<link href="dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
+    	<!-- Loading Flat UI -->
+	    	<link href="dist/css/flat-ui.css" rel="stylesheet"></link>
+	    	<link href="docs/assets/css/demo.css" rel="stylesheet"></link>
+	    	<link rel="shortcut icon" href="img/pkm.ico"></link>
+	    	
+	    	    	<!-- CSS perso -->
+	<link href="css/index.css" rel="stylesheet"></link>
+	<link href="css/canvas.css" rel="stylesheet"></link>
+	
+	
+	<!-- javascript  -->	
+		<script src="js/FlechesActions.js"></script> <!--  FLECHES DIRECTIONNELLES Accesskeys -->
+		<script src="lib/jquery-1.11.1.min.js"></script>
+		<script src="js/BoutonAction.js"></script>
+	<!--	<script src="js/Graph.js"></script> -->
+	<!--	<script src="js/Canvas.js"></script> -->
+		<script src="js/ajax.js"></script>
+		<script src="js/jquery.cookie.js"></script>
+	<!-- highrcharts -->
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="code/highcharts.js"></script>
+		<script src="code/modules/exporting.js"></script>
+		<script src="js/script-graphiques.js"></script>
+		
+	<!--  script de la map -->
+		<script src="map/lib/jquery-3.2.1.min.js" type="text/javascript"></script> 
+	<script src="map/js/render_scene.js" type="text/javascript"></script> 
+
+	
+</head>
+
+<!--   BODY  -->
+<body>
+	
+	<!-- BANIÈRE  -->
+	<div class="baniere" align="center">
+		<div class="col-xs-12">
+			<nav class="navbar navbar-inverse navbar-embossed" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#navbar-collapse-01">
+					<span class="sr-only">Toggle navigation</span>
+				</button>
+				<a class="navbar-brand" href="index.html">Projet Majeure</a>
+			</div> 
+			<div class="collapse navbar-collapse" id="navbar-collapse-01">
+				<ul class="nav navbar-nav navbar-left">
+					<li class="navbar-left"><a class="fui-gear" href="admin.xhtml"> Robot: running...</a></li>
+				</ul>
+				
+				
+				
+				<ul class="nav navbar-nav navbar-right">
+				<li class="navbar-right">
+					<a id="ButtonDisconnect" class="fui-user" href="userLogin.jsf">Bienvenue : <h:outputText value="#{loggedUser.login}" /> (se deconnecter)</a></li>
+				</ul>
+				<form class="navbar-form navbar-right"></form>
+			</div>
+			</nav>
+		</div> <!--/col-xs-12-->
+	</div> <!--/baniere-->
+
+	
+
+	<!--  CONTENU  -->
+	<div id="contenu">	
+		<div id="main"> 
+		<!-- Parametres -->
+			 <div id="menu"> 
+			 	<div class="col-xs-3" style="white-space:nowrap">
+			 		<h3 class="demo-panel-title">Parameters</h3>
+			          <label class="checkbox" for="checkbox1">
+			         		<h:inputText type="checkbox" checked="checked" id="checkbox1" data-toggle="checkbox">Show robot</h:inputText>
+			          </label>
+			          <label class="checkbox" for="checkbox2">
+			            	<h:inputText type="checkbox" checked="checked" value="" id="checkbox2" data-toggle="checkbox">Display robot path</h:inputText>
+			          </label>
+			          <label class="checkbox" for="checkbox3">
+			            	<h:inputText type="checkbox" checked="checked" value="" id="checkbox3" data-toggle="checkbox">Display obstacles</h:inputText>
+			          </label>
+			          <label class="checkbox" for="checkbox4">
+			            	<h:inputText type="checkbox" value="" id="checkbox4" data-toggle="checkbox">Auto mapping</h:inputText>
+			          </label>
+			          
+			          
+			          <h3 class="demo-panel-title">Controler</h3>
+			          <div class="fleches-directionnels">
+			          	 <div class="fleche haut">
+						  	<a id="ButtonUp" href="#" class="btn-lg btn-primary fui-triangle-up"></a>
+						  </div>
+			          </div>
+			          <div class="fleches-directionnels">
+						  <div class="fleche gauche">
+						  	<a id="ButtonLeft" href="#" class="btn-lg btn-primary fui-arrow-left"></a>
+						  </div>
+						  <div class="fleche bas">
+						 	 <a id="ButtonDown" href="#" class="btn-lg btn-primary fui-triangle-down"></a>
+						  </div>
+						  <div class="fleche droite">
+						  	<a id="ButtonRight" href="#" class="btn-lg btn-primary fui-arrow-right"></a>
+						  </div>
+					</div>
+					
+					<div class="col-xs-3">
+          				<a id="ButtonRefresh" class="bouton-reset btn btn-lg btn-inverse">Refresh</a>
+        				</div>
+        				
+					<div class="col-xs-3">
+          				<a id="ButtonStart" class="bouton-reset btn btn-lg btn-inverse">Start</a>
+        				</div>
+					
+					<div class="col-xs-3">
+          				<a id="ButtonReset" class="bouton-reset btn btn-lg btn-inverse">Reset</a>
+        				</div>
+					
+
+			</div>
+		</div>
+		
+		<!-- Map -->
+			<div id="map"> 
+				<div class="col-xs-3">
+				  	<h3 class="demo-panel-title">Map</h3>			  	
+				</div> 
+				<div id="canvas_map" >
+				  	<canvas width="640" height="480" ></canvas>
+				</div>
+
+			 </div>
+		</div>
+		
+		<!--  Graphiques   -->
+		<div id="graphiques"> 
+			<div class="col-xs-3">
+			  	<h3 class="demo-panel-title">Data</h3>
+			</div> <!-- /checkboxes col-xs-3 -->
+			
+			<div id="graph1" style="min-width: 310px; height: 200px; margin: 0 auto"></div>
+			<br /><br /><br />
+			<div id="graph2" style="min-width: 310px; height: 200px; margin: 0 auto"></div>
+			<br />
+			<div id="graph3" style="min-width: 310px; height: 200px; margin: 0 auto"></div>
+			<br />
+			<div id="graph4" style="min-width: 310px; height: 200px; margin: 0 auto"></div>
+			<br />
+		</div>
+	
+	
+		
+	</div>
+	
+	
+	<!-- 	  FOOTER  	 -->
+	<footer>
+      <div class="container">
+            <p>
+              Eliott Joulot, Baptiste Blanc, Dorian Bouchet, Quentin Debout<br/>
+              Our project :  <a href="docs/Cahier_des_charges.pdf"> technical documentation</a>
+            </p>
+
+      </div>
+    </footer>
+	
+	<!-- 	 SCRIPTS  	 -->
+	<script src="dist/js/vendor/jquery.min.js"></script>
+    	<script src="dist/js/vendor/video.js"></script>
+    	<script src="dist/js/flat-ui.min.js"></script>
+    	<script src="docs/assets/js/application.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+
+.cadre-connection {
+	position: relative;
+	margin: 0px auto;
+	padding: 20px 0px 0px;
+	width: 500px;
+	color: #fff;
+	margin-bottom: 80px;
+}
+
+.baniere {
+	position: relative;
+	margin: 0px 20px 5px 20px;
+	padding: 20px 0px 0px;
+	color: #fff;
+}
+.contenu {
+	margin-top: 100px;
+}

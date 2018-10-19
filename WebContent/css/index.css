@@ -1,0 +1,89 @@
+@CHARSET "UTF-8";
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/lato/lato-black.eot');
+  src: url('../fonts/lato/lato-black.eot?#iefix') format('embedded-opentype'), url('../fonts/lato/lato-black.woff') format('woff'), url('../fonts/lato/lato-black.ttf') format('truetype'), url('../fonts/lato/lato-black.svg#latoblack') format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+
+.baniere {
+	position: relative;
+	margin: 0px 20px 0px 20px;
+	padding: 20px 0px 0px;
+	color: #fff;
+}
+
+footer {
+	margin-bottom: 0px;
+}
+
+body {
+	font-family: "Lato";
+	position: relative;
+	display: flex;
+	flex-direction: column;
+
+}
+	
+
+#contenu {
+	padding-top: 15px;
+  	padding-left: 35px;
+ 	padding-right: 35px;
+ 	max-with:960px;
+ 	width: 100%;	
+ 	margin:auto;
+ 	margin-bottom: 80px;
+}
+#main {
+	max-with:960px;
+	width: 100%;
+	margin: auto;	
+}
+#menu  {
+	float:right;
+	width:200px;
+	background-color:#edeff1;
+	border-radius: 6px;
+	height: 550px;
+}
+#map {
+	margin-right:230px;
+	background-color:#edeff1;
+	border-radius: 6px;
+	height: 1000px;
+	min-width: 500px;
+}
+#graphiques {
+	background-color:#edeff1;
+	border-radius: 6px;
+	margin-top: 20px;
+	margin-bottom: 60px;
+}
+
+
+.fleches-directionnels {	
+	margin-left:85px;
+  	display: flex;
+  	justify-content: center;
+}
+.fleche {
+	margin: 2px;
+}
+.haut {
+	margin-bottom: 10px;
+}
+.bouton-reset {	
+	margin-top: 15px;
+  	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+

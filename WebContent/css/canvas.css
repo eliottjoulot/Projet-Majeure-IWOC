@@ -1,0 +1,32 @@
+#canvas_map
+{
+	margin:20px;
+	height:auto;
+	/*padding-left:25%;*/
+	margin-bottom:50px;
+	background-color:none;
+
+}
+
+#map>.col-xs-3
+{
+	width:100%;
+	float:inherit; 
+}
+
+#map
+{
+	height:auto;
+}
+canvas
+{
+
+}
+
+.bouton-reset
+{
+	display:inline-block; 
+}
+
+
+
